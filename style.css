@@ -31,7 +31,7 @@ body {
 .calculator__keys {
   background: rgb(214, 214, 214);
   display: grid;
-  grid-gap: 2px;
+  grid-gap: 0.5px;
   grid-template-columns: repeat(4, auto);
   grid-template-areas:
     ". . . ."
@@ -86,10 +86,7 @@ body {
   grid-area: zero;
 }
 
-.equal {
-  grid-area: equal;
-  background: #e66465;
-}
+
 .equal:hover,
 .equal:focus {
   background: #cc4b4b;
@@ -99,13 +96,22 @@ body {
   grid-area: clear;
 }
 
-.number {
+[data-type="number"], [data-type="clear"]{
   background: white;
 }
 
-.number:hover,
-.numer:focus,
-.operator:hover,
-.operator:focus {
+[data-type="number"]:hover,
+[data-type="operator"]:hover,
+[data-type="operator"]:focus {
+  background: #969191;
+}
+
+.equal {
+  border-radius: 0.5em;
+  grid-area: equal;
+  background: #e66465;
+}
+
+[data-state = "selected"]{
   background: #969191;
 }
